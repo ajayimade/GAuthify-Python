@@ -58,8 +58,9 @@ class RateLimitError(GAuthifyError):
 class GAuthify(object):
     def __init__(self, api_key):
         self.access_points = [
-            'https://alpha.gauthify.com/v1/',
             'https://beta.gauthify.com/v1/'
+            'https://alpha.gauthify.com/v1/',
+            
         ]
         self.headers = {
             'Authorization': 'Basic {}'.format(
