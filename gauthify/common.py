@@ -60,7 +60,7 @@ class GAuthify(object):
         self.access_points = [
             'https://beta.gauthify.com/v1/',
             'https://alpha.gauthify.com/v1/'
-            
+
         ]
         self.headers = {
             'Authorization': 'Basic {}'.format(
@@ -78,7 +78,7 @@ class GAuthify(object):
                 req_url = base_url + url_addon
                 req = requests.request(type.lower(), req_url, data=params,
                                        params=params, headers=self.headers,
-                                       timeout=5)
+                                       timeout=15)
                 status_code = req.status_code
                 json_resp = req.json
                 # Fix for requests 2.0:
